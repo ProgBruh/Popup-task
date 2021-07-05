@@ -3,14 +3,20 @@
     <span class="popup-calculate__title">
       Итого можете внести в качестве досрочных:
     </span>
-    <div class="popup-calculate__wrapper" v-for="n in 4" :key="n">
-      <Checkbox class="popup-calculate__checkbox" />
-      <span class="popup-calculate__tax">
-        {{ separateThousands(tax) }}
-        <span class="popup-calculate__year">
-          {{ byYear(n) }}
+    <div class="popup-calculate__list">
+      <div
+        class="popup-calculate__wrapper"
+        v-for="(item, index) of items"
+        :key="index"
+      >
+        <Checkbox class="popup-calculate__checkbox" />
+        <span class="popup-calculate__tax">
+          {{ separateThousands(item) }}
+          <span class="popup-calculate__year">
+            {{ byYear(index + 1) }}
+          </span>
         </span>
-      </span>
+      </div>
     </div>
   </div>
 </template>
@@ -26,8 +32,8 @@ export default {
   },
 
   props: {
-    taxDeduction: {
-      type: [Number, String],
+    items: {
+      type: Array,
     },
   },
 
@@ -44,6 +50,11 @@ export default {
         2: '-ой',
         3: '-ий',
         4: '-ый',
+        5: '-ый',
+        6: '-ой',
+        7: '-ой',
+        8: '-ой',
+        9: '-ый',
       },
     };
   },

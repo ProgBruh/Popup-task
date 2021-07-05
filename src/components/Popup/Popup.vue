@@ -21,7 +21,7 @@
           @click.native="calculate"
           >Рассчитать</TextButton
         >
-        <PopupCalculate :taxDeduction="taxDeduction" v-if="calculated" />
+        <PopupCalculate :items="items" v-if="calculated" />
         <div class="popup__wrapper">
           <span class="popup__question"> Что уменьшаем? </span>
           <Tag active class="popup__tag">Платеж</Tag>
@@ -57,6 +57,7 @@ export default {
       salary: null,
       taxDeduction: null,
       calculated: false,
+      items: [],
     };
   },
 
@@ -68,13 +69,23 @@ export default {
       if (!this.salary) {
         return;
       }
+      this.items = [];
+      const border = 260000;
       const salary = this.salary.includes('₽')
         ? parseInt(this.salary.replace(/\s+/g, '').slice(0, -1))
         : parseInt(this.salary);
       const taxDeduction = salary * 12 * 0.13;
-      this.taxDeduction = taxDeduction.toString().includes('.')
-        ? taxDeduction.toFixed(1)
-        : taxDeduction;
+      let remainder;
+      if (taxDeduction < border) {
+        const count = parseInt(border / taxDeduction);
+        for (let i = 0; i < count; i++) {
+          this.items.push(taxDeduction);
+        }
+        remainder = border % taxDeduction;
+      } else {
+        remainder = border;
+      }
+      this.items.push(remainder);
       this.calculated = true;
     },
   },
