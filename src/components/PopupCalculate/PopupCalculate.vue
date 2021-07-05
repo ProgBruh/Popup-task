@@ -64,7 +64,7 @@ export default {
       return `в ${year}${this.endings[year]} год`;
     },
     separateThousands(num) {
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' рублей';
     },
   },
 };
