@@ -1,0 +1,164 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.3);
+
+  &__window {
+    position: relative;
+
+    width: 552px;
+
+    padding: 32px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    animation: popup-in 0.35s;
+
+    @include mobile {
+      width: 453px;
+    }
+
+    @include small-mobile {
+      width: 100%;
+      height: 100%;
+
+      border-radius: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding-top: 32px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 16px;
+
+      overflow-y: auto;
+    }
+  }
+
+  &__close {
+    width: 18px;
+    height: 18px;
+
+    position: absolute;
+    right: 27px;
+    top: 27px;
+
+    border: none;
+    background: inherit;
+
+    background-image: url('../../img/Popup/Close.svg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include mobile {
+      right: 23px;
+    }
+
+    @include small-mobile {
+      width: 12px;
+      height: 12px;
+
+      top: 22px;
+      right: 22px;
+    }
+  }
+
+  &__title {
+    display: block;
+
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 500;
+
+    margin-bottom: 16px;
+
+    @include small-mobile {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 24px;
+
+    color: #808080;
+
+    margin-bottom: 24px;
+
+    @include small-mobile {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &__calculate-button {
+    margin-top: 8px;
+    margin-bottom: 28px;
+
+    &--active {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 40px;
+
+    @include small-mobile {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__question {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+
+    margin-right: 32px;
+
+    @include small-mobile {
+      width: 100%;
+
+      margin-bottom: 24px;
+    }
+  }
+
+  &__tag {
+    margin-right: 16px;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+@keyframes popup-in {
+  0% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

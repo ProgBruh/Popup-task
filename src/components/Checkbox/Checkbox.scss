@@ -1,0 +1,48 @@
+.checkbox {
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid #dfe3e6;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  &:hover {
+    border-color: black;
+  }
+
+  &--active {
+    background: linear-gradient(
+        255.35deg,
+        #dc3131 0.83%,
+        rgba(255, 79, 79, 0) 108.93%
+      ),
+      linear-gradient(0deg, #ff5e56, #ff5e56);
+  }
+
+  &--disabled {
+    background: #bec5cc !important;
+  }
+
+  &__field {
+    display: none;
+  }
+
+  &__label {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: inherit;
+
+    &--active {
+      background: url('./../../img/Checkbox/Check.svg');
+      background-repeat: no-repeat;
+      background-size: 12px 9px;
+      background-position: center;
+    }
+  }
+}

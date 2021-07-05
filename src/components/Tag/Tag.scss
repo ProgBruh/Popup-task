@@ -1,0 +1,29 @@
+.tag {
+  width: max-content;
+
+  font-size: 14px;
+  line-height: 24px;
+  color: black;
+
+  padding: 6px 12px;
+
+  border-radius: 50px;
+
+  background: #eef0f2;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #dfe3e6;
+  }
+
+  &--active {
+    background: linear-gradient(
+        255.35deg,
+        #dc3131 0.83%,
+        rgba(255, 79, 79, 0) 108.93%
+      ),
+      linear-gradient(0deg, #ff5e56, #ff5e56) !important;
+    color: white;
+  }
+}

@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { merge } = require('webpack-merge');
 const baseWebpackConf = require('./webpack.base.conf');
@@ -61,5 +62,17 @@ module.exports = merge(baseWebpackConf, {
       filename: './styles/[name].css',
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: `${baseWebpackConf.externals.paths.src}/img`,
+          to: `${baseWebpackConf.externals.paths.assets}img`,
+        },
+        {
+          from: `${baseWebpackConf.externals.paths.src}/fonts`,
+          to: `${baseWebpackConf.externals.paths.assets}/fonts`,
+        },
+      ],
+    }),
   ],
 });

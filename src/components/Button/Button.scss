@@ -1,0 +1,61 @@
+.button {
+  min-width: 150px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  line-height: 16px;
+  color: white;
+
+  background: linear-gradient(
+      255.35deg,
+      #dc3131 0.83%,
+      rgba(255, 79, 79, 0) 108.93%
+    ),
+    linear-gradient(0deg, #ff5e56, #ff5e56);
+
+  border-radius: 6px;
+
+  border: none;
+
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: #ea0029;
+  }
+
+  &--disabled {
+    background: #bec5cc !important;
+    color: white !important;
+  }
+
+  &--outlined {
+    background: transparent;
+
+    border: 1px solid white;
+
+    &:hover {
+      background: white;
+      color: black;
+    }
+  }
+
+  &--big {
+    height: 56px;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    @include small-mobile {
+      height: 40px;
+      min-height: 40px;
+    }
+  }
+}

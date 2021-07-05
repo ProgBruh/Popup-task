@@ -1,0 +1,35 @@
+.popup-calculate {
+  margin-bottom: 4px;
+
+  &__title {
+    display: block;
+
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+
+    margin-bottom: 16px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid #dfe3e6;
+  }
+
+  &__checkbox {
+    margin-right: 11px;
+  }
+
+  &__tax {
+    color: black;
+  }
+
+  &__year {
+    color: #808080;
+  }
+}

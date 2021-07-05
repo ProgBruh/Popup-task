@@ -1,0 +1,31 @@
+@import './Button/Button.scss';
+@import './Checkbox/Checkbox.scss';
+@import './Input/Input.scss';
+@import './Popup/Popup.scss';
+@import './PopupCalculate/PopupCalculate.scss';
+@import './Tag/Tag.scss';
+@import './TextButton/TextButton.scss';
+
+.app {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+      255.35deg,
+      #dc3131 0.83%,
+      rgba(255, 79, 79, 0) 108.93%
+    ),
+    linear-gradient(0deg, #ff5e56, #ff5e56);
+
+  &__button {
+    width: 198px;
+
+    @include small-mobile {
+      width: 149px;
+    }
+  }
+}

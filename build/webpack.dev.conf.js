@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { merge } = require('webpack-merge');
 const baseWebpackConf = require('./webpack.base.conf');
 
@@ -37,4 +38,18 @@ module.exports = merge(baseWebpackConf, {
       },
     ],
   },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: `${baseWebpackConf.externals.paths.src}/img`,
+          to: `${baseWebpackConf.externals.paths.assets}img`,
+        },
+        {
+          from: `${baseWebpackConf.externals.paths.src}/fonts`,
+          to: `${baseWebpackConf.externals.paths.assets}/fonts`,
+        },
+      ],
+    }),
+  ],
 });

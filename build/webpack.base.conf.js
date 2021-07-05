@@ -6,6 +6,7 @@ const PATHS = {
   public: path.resolve(__dirname, '../public'),
   src: path.resolve(__dirname, '../src'),
   dist: path.resolve(__dirname, '../dist'),
+  assets: './',
 };
 
 module.exports = {
@@ -46,6 +47,13 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
       },
     ],
   },
