@@ -46,6 +46,7 @@ export default {
   data() {
     return {
       endings: {
+        0: '-ый',
         1: '-ый',
         2: '-ой',
         3: '-ий',
@@ -61,7 +62,7 @@ export default {
 
   methods: {
     byYear(year) {
-      return `в ${year}${this.endings[year]} год`;
+      return `в ${year}${this.endings[year.toString().slice(-1)]} год`;
     },
     separateThousands(num) {
       return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' рублей';
