@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "http://ProgBruh.github.io/Popup-task",
   "scripts": {
     "dev": "webpack serve --config ./build/webpack.dev.conf.js",
     "build": "webpack --config ./build/webpack.build.conf.js",
     "lint": "eslint --fix .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "MIT",
@@ -26,6 +29,7 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-vue": "^7.12.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.3.2",
     "imask": "^6.1.0",
     "mini-css-extract-plugin": "^2.0.0",
